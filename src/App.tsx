@@ -61,11 +61,7 @@ function App() {
 
   return (
     <>
-      <canvas
-        ref={canvasRef}
-        id="canvas"
-        className="border-4 border-red-500"
-      ></canvas>
+      <canvas ref={canvasRef} id="canvas"></canvas>
     </>
   );
 }
