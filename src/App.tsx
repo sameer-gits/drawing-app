@@ -6,7 +6,7 @@ function App() {
   const cap: any = "round";
   let drawing: boolean = false;
   let ctx: CanvasRenderingContext2D | null = null;
-  const canvasRef = useRef<HTMLCanvasElement>(null); // Use useRef for the canvas reference
+  const canvasRef = useRef<HTMLCanvasElement>(null);
 
   useEffect(() => {
     const canvas = canvasRef.current;
@@ -26,7 +26,7 @@ function App() {
         canvas.removeEventListener("pointermove", draw);
       }
     };
-  }, []); // Empty dependency array to run the effect only once after the initial render
+  }, []);
 
   function isDrawing() {
     drawing = true;
@@ -54,8 +54,6 @@ function App() {
       canvas.style.margin = "0";
       canvas.style.padding = "0";
       canvas.style.border = "0"; // Ensure no border which might add to the height
-      canvas.style.overflow = "hidden"; // Ensure no overflow which might cause scrollbars
-
       canvas.width = window.innerWidth;
       canvas.height = window.innerHeight;
     }
